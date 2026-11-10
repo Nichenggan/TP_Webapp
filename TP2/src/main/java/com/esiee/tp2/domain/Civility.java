@@ -8,6 +8,10 @@ public class Civility {
     public Civility() {
     }
 
+    public Civility(Long id){
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }

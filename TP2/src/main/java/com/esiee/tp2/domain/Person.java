@@ -10,6 +10,7 @@ public class Person {
     private Function function;
 
     public Person() {
+        
     }
 
     public String getLogin() {
