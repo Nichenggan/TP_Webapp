@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
 <head>
     <title>Détails de la Personne</title>
@@ -31,10 +31,10 @@
 
 <h2>Détails du profil</h2>
 
-<!-- 1. Interrogation du Datamodel via jsp:useBean -->
-<jsp:useBean id="datamodel" class="com.esiee.tp2.model.Datamodel" scope="page" factoryMethod="getInstance" />
+<%-- 1. 通过表达式获取 Datamodel 单例 --%>
+<c:set var="datamodel" value="<%= com.esiee.tp2.model.Datamodel.getInstance() %>" scope="page" />
 
-<!-- 2. Récupération de la personne grâce au paramètre 'id' transmis dans l'URL (param.id) -->
+<%-- 2. 根据 URL 中的 param.id 获取 Person 对象 --%>
 <c:set var="person" value="${datamodel.getPerson(param.id)}" />
 
 <c:choose>

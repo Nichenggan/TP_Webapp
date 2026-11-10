@@ -10,7 +10,11 @@ public class Person {
     private Function function;
 
     public Person() {
-        
+
+    }
+
+    public Long getId(){
+        return this.civility.getId();
     }
 
     public String getLogin() {
